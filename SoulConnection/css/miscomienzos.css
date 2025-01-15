@@ -1,0 +1,143 @@
+/* Create the hero section with a background image */
+.hero-titlehero-section {
+    position: relative;
+    height: 70vh; /* Adjust the height as needed */
+}
+
+/* Add a dark overlay to the hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 70vh; /* Adjust the height as needed */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+}
+
+/* Set the width of the hero image to 100% */
+.hero-image {
+    width: 100%;
+    display: block;
+    height: 100%; /* Ensure the image takes the full height of the container */
+    object-fit: cover; /* Maintain the aspect ratio of the image */
+}
+
+/* Center the hero content both horizontally and vertically */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Set the text color */
+}
+
+/* Style the title and paragraph */
+.hero-content h1 {
+    font-size: 2.5em; /* Adjust the font size */
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em; /* Adjust the font size */
+    margin: 0;
+}
+
+.mis-comienzos{
+	padding: 3em 0;
+	background-color: #F2F1F0;
+}
+
+.talleres__img{
+	width: 100%;
+	height: 20em;
+	object-fit: cover;
+	padding-bottom: 2.5em;
+}
+
+.historia-img{
+	width: 100%;
+	height: 20em;
+	object-fit: cover;
+	padding-bottom: ;
+}
+
+.historia{
+	padding: 3em 0;
+}
+
+.historia h5{
+	padding: 0;
+}
+
+.mis-comienzos p{
+	padding-bottom: 1.5em;
+}
+
+
+.bottom-space{
+	padding-bottom: 1em;
+}
+
+.align-center{
+	align-items: center;
+}
+
+.columna {
+	width: 100%;
+	padding-top: 0.5em;
+	padding-bottom: 4em;
+	
+}
+
+
+
+.columna + .columna {
+	margin-left: 3em;
+}
+.fila {
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-container{
+	padding-bottom: 3em;
+} 
+
+
+/* Media query for phone-sized screens */
+@media screen and (max-width: 35rem) {
+    .fila {
+        flex-direction: column-reverse;
+    }
+    .columna {
+        margin-left: 0; /* Remove margin between columns */
+        padding-bottom: 1em; /* Add padding to the bottom of columns */
+    }
+	
+	.columna + .columna {
+	margin-left: 0;
+}
+	
+  
+  .text-container {
+        order: 1!important;
+    }
+  
+  .below-img-phone {
+        order:2!important;
+    }
+  
+}
+
+
+
+
+

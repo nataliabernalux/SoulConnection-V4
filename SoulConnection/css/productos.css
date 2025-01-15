@@ -1,0 +1,405 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.productos{
+	padding: 3em 0;
+	background-color: #F2F1F0;
+	
+}
+
+
+
+.container2 {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Create the hero section with a background image */
+.products {
+    position: relative;
+    height: 70vh; /* Adjust the height as needed */
+}
+
+/* Add a dark overlay to the hero section */
+.hero {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    height: 70vh; /* Adjust the height as needed */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+}
+
+/* Set the width of the hero image to 100% */
+.hero-image {
+    width: 100%;
+    display: block;
+    height: 100%; /* Ensure the image takes the full height of the container */
+    object-fit: cover; /* Maintain the aspect ratio of the image */
+}
+
+/* Center the hero content both horizontally and vertically */
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white; /* Set the text color */
+}
+
+/* Style the title and paragraph */
+.hero-content h1 {
+    font-size: 2.5em; /* Adjust the font size */
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em; /* Adjust the font size */
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+/* Apply styles to the products section */
+.productos {
+    background-color: #F2F1F0;
+}
+
+/* Center the products container horizontally */
+.productos .container2 {
+        width: 100%;
+        max-width: 1400px; /* Adjust the max-width to your preference */
+        margin: 0 auto;
+    }
+
+
+/* Create a grid layout for the products section */
+.productos .products-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr; /* Sidebar takes 1 part, Grid takes 3 parts */
+    grid-gap: 20px;
+    padding: 20px 0;
+    max-width: 100%;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Style for the sidebar */
+.productos .sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    height: 400px;
+}
+
+/* Style for the categories in the sidebar */
+.productos .sidebar h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.productos .sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.productos .sidebar li {
+    margin-bottom: 8px;
+}
+
+.productos .sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Apply styles to the products grid */
+.productos .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+/* Style for each product item */
+.productos .product-item {
+    text-align: center;
+}
+
+/* Style for the product box container */
+.productos .product-box {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.productos .product-box img {
+    width: 100%;
+    max-height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.productos .product-description {
+    font-size: 1em;
+    color: #555;
+    padding: 10px;
+    margin: 0;
+}
+
+
+
+
+
+
+/* Original styles for larger screens */
+.productos .sidebar {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    height: 370px;
+}
+
+
+
+
+
+#categorias-dropdown-menu li a {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+#categorias-dropdown-menu li a:hover {
+    opacity: 0.7; /* Adjust the opacity value as needed */
+}
+
+.btn {
+    display: inline-block;
+    font-weight: bold;
+    border-radius: 100px;
+    padding: 10px 20px;
+    background-color: #124EBD;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+	
+}
+
+.btn:hover,
+.btn:focus {
+    opacity: .75; 
+}
+
+.btn-center{
+	display: flex;
+	justify-content: center;
+}
+
+
+/* Additional styling for the "Ver Todos" button */
+.productos .btn-center {
+    text-align: center;
+    margin-top: 10px;
+	
+}
+
+
+
+/* Specific rule to make .productos .btn text white */
+.productos .btn,
+.productos .btn:visited {
+    color: #fff;
+}
+
+
+
+/* Updated styles for smaller screens */
+@media screen and (max-width: 767px) {
+    .productos .sidebar {
+        height: auto; /* Allow the sidebar to grow with content */
+        margin-bottom: 20px;
+    }
+
+    .productos #categorias-dropdown-toggle {
+        display: block; /* Show the toggle for smaller screens */
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .productos #categorias-dropdown-menu {
+        display: none;
+    }
+
+    .productos #categorias-dropdown-menu.active {
+        display: block;
+    }
+
+   
+}
+
+
+
+
+
+
+
+
+
+/* Updated styles for smaller screens */
+@media screen and (max-width: 767px) {
+    .productos .sidebar {
+        height: auto; /* Allow the sidebar to grow with content */
+        margin-bottom: 20px;
+    }
+
+    .productos .categorias-dropdown {
+        background-color: #fff;
+       
+    }
+    
+    .productos #categorias-dropdown-toggle {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .productos #categorias-dropdown-menu {
+        list-style: none;
+        padding: 0;
+        display: none;
+        }
+    
+    .productos #categorias-dropdown-menu li {
+        margin-bottom: 8px;
+        
+    }
+    
+    .productos #categorias-dropdown-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    
+}
+
+
+
+
+
+
+/* Responsive styles for smaller screens */
+
+/* Adjust the container width for smaller screens */
+@media screen and (max-width: 767px) {
+    .productos .container2 {
+        width: 90%;
+    }
+
+    /* Adjust the grid layout for smaller screens */
+    .productos .products-container {
+        grid-template-columns: 1fr; /* Full-width for small screens */
+    }
+
+    /* Adjust the sidebar and grid columns for smaller screens */
+    .productos .sidebar {
+        height: auto; /* Allow the sidebar to grow with content */
+        margin-bottom: 20px;
+    }
+
+    .productos .products-grid {
+        grid-template-columns: 1fr; /* Full-width for small screens */
+    }
+    
+    /* Make images in the product grid responsive */
+    .productos .product-box img {
+        max-height: 220px; /* Remove the max-height for responsiveness */
+    }
+
+
+
+
+    .productos .categorias-dropdown {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    
+    .productos #categorias-dropdown-toggle {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    
+    .productos #categorias-dropdown-menu {
+        list-style: none;
+        padding: 0;
+        display: none;
+    }
+    
+    .productos #categorias-dropdown-menu li {
+        margin-bottom: 8px;
+    }
+    
+    .productos #categorias-dropdown-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+    }
+
+    .productos .categorias-dropdown {
+        height: auto; /* Allow the sidebar and dropdown to grow with content */
+        box-shadow: none; /* Remove the box shadow */
+    }
+}
+
+
+
+
+/* Adjust styles for tablet-sized screens */
+@media screen and (min-width: 650px) and (max-width: 991px) {
+    .productos .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablet screens */
+    }
+
+    .productos .categorias-dropdown {
+        height: auto; /* Allow the sidebar and dropdown to grow with content */
+        box-shadow: none; /* Remove the box shadow */
+    }
+}
+
+
+/* Adjust styles for phone-sized screens */
+@media screen and (max-width: 479px) {
+    .productos .product-box img {
+        max-height: 200px; /* Set a smaller max-height for phone screens */
+    }
+
+    .productos .categorias-dropdown {
+        height: auto; /* Allow the sidebar and dropdown to grow with content */
+        box-shadow: none; /* Remove the box shadow */
+    }
+    
+}
