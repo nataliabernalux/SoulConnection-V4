@@ -127,9 +127,20 @@ h5 {
   text-decoration: none;
   margin: 0;
   line-height: 1;
-  display: flex;
+  display: inline-block;
   align-items: center;
   color: #74262c; /* Default color */
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 0.3em; /* Space between the logo and the text */
 }
 
 /* -------------------------------- */
@@ -685,7 +696,7 @@ a#scroll-btn::before {
 
 /*Footer style*/
 .footer {
-  background: linear-gradient(to bottom, rgba(116, 38, 44, 0.5), #74262c),
+  background: linear-gradient(to bottom, rgba(116, 38, 44, 0.5), #480208),
     url("img/shadow.png") top center no-repeat;
   background-size: cover; /* Ensures the image covers the width */
   color: #f9dba6;
