@@ -1,59 +1,263 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-
-*, *::before, *::after {
-    box-sizing: border-box;
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-    margin: 0;
-    font-family: 'Roboto Flex', sans-serif;
-    font-size: 1.3rem;
-	color: #3B3D49;
+  margin: 0;
+  font-family: "Roboto Flex", sans-serif;
+
+  color: #4c4c4c; /* Softer text color */
+}
+
+p {
+  line-height: 1.5; /* Better readability */
+  margin-top: 0.5em; /* Margin above the paragraph */
 }
 
 img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 h1 {
-    font-size: 2.5rem;
-	color: #008C8E;
-	text-transform: uppercase;
-	font-family: Roboto Flex, sans-serif;; 
-    margin-top: 0;
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 7rem;
+  color: #f9dba6;
+  text-decoration: none;
+  margin: 0;
+}
+
+h2 {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 2.3em;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0;
+  text-align: center;
+  letter-spacing: -0.01em;
+
+  /* Gradient text effect */
+  background: linear-gradient(
+    130deg,
+    hwb(355 22% 44%),
+    #3a3a3a
+  ); /* Adjust gradient colors as needed */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; /* This makes the gradient visible on the text */
+  background-clip: text; /* Ensure text fills with gradient */
 }
 
 h3 {
-	text-transform: uppercase;
-	color: #016465;
-	font-family: Vazirmatn, sans-serif;
-	font-weight: 400;
-	margin:0;
+  text-transform: uppercase;
+  color: #f9dba6;
+  font-family: Roboto, sans-serif;
+  font-weight: 100;
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.7em;
 }
 
-
-
-header {
-    background: #F0EAD9;
-    padding: .5em 0;
-	z-index: 999;
-	
+h4 {
+  text-transform: uppercase;
+  color: #74262c;
+  font-family: Vazirmatn, sans-serif;
+  font-weight: 400;
+  margin: 0;
 }
 
+h5 {
+  font-size: 20px;
+  color: #3a3a3a;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: bold;
+  margin: 0;
+  padding-top: 1em;
+}
 
+/* -------------------------------- */
+/* Header Styles */
+/* -------------------------------- */
+
+/* Transparent header for the initial state */
+#main-header {
+  background: rgba(0, 0, 0, 0.5); /* Transparent background */
+  position: absolute; /* Overlays the hero section */
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#main-header .soulconnection-logo,
+#main-header .nav__link {
+  color: #f9dba6; /* Yellow text for transparent header */
+  transition: color 0.3s ease;
+}
+
+/* Fixed header when scrolled */
+#main-header.scrolled {
+  background: #ebe0d5; /* Original background */
+  position: fixed;
+  color: #74262c; /* Reset text color */
+  top: 0;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+#main-header.scrolled .soulconnection-logo,
+#main-header.scrolled .nav__link {
+  color: #74262c; /* Original text color */
+}
+
+/* -------------------------------- */
+/* Logo Styles */
+/* -------------------------------- */
+.soulconnection-logo {
+  font-family: "Italianno", cursive;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 3em;
+  text-decoration: none;
+  margin: 0;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  color: #74262c; /* Default color */
+}
+
+/* -------------------------------- */
+/* Navigation Styles */
+/* -------------------------------- */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav__item + .nav__item {
+  margin-left: 1em;
+}
+
+.nav__link {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 1.3em;
+  text-decoration: none;
+  font-weight: light;
+  color: #74262c; /* Default color */
+}
+
+.nav__link--button {
+  background: #fff;
+  color: #74262c;
+  padding: 0.25em 1em;
+  border-radius: 10em;
+}
+
+.nav__link:hover {
+  opacity: 0.75;
+}
+
+/* -------------------------------- */
+/* Hamburger Icon Styles */
+/* -------------------------------- */
+.hamburger {
+  width: 50%;
+  position: relative;
+  z-index: 99;
+  display: block;
+  margin: 0 auto;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  height: 3px;
+  background-color: #f9dba6; /* Default color */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+}
+
+/* Top line */
+.hamburger::before {
+  transform: translateY(-6px); /* Adjust spacing */
+}
+
+/* Bottom line */
+.hamburger::after {
+  transform: translateY(6px); /* Adjust spacing */
+}
+
+/* Scrolled state */
+header.scrolled .hamburger,
+header.scrolled .hamburger::before,
+header.scrolled .hamburger::after {
+  background-color: #74262c; /* Original color after scrolling */
+}
+
+/* -------------------------------- */
+/* Hamburger Icon Transition States */
+/* -------------------------------- */
+
+/* When header is scrolled */
+header.scrolled .hamburger {
+  background: #74262c;
+}
+
+header.scrolled .hamburger::before,
+header.scrolled .hamburger::after {
+  background: #74262c;
+}
+
+/* When the menu is visible */
+.nav--visible .hamburger {
+  background-color: transparent; /* Hide middle bar */
+  transform: rotate(-45deg); /* Rotate top bar */
+}
+
+.nav--visible .hamburger::before,
+.nav--visible .hamburger::after {
+  top: 0;
+  transform: rotate(45deg); /* Rotate bottom bar */
+}
+
+/* -------------------------------- */
+/* Miscellaneous */
+/* -------------------------------- */
 .container {
-    width: 80%;
-    max-width: 1100px;
-    margin: 0 auto;
+  width: 80%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-.siendotierra-logo{
-    font-family: Averia Sans Libre, sans-serif;
-    color: #136c72;
-    text-decoration: none;
-    font-weight: bold;
-	cursor: none;
-	font-size: 24px;
+.heading-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 0 20px;
 }
 
 .nav-toggle {
@@ -61,376 +265,434 @@ header {
   border: 0;
   width: 3rem;
   height: 3rem;
-  padding: 0em;
-  background: #136C72;
-  color: white;
+  padding: 0;
+  background: rgba(0, 0, 0, 0);
+  color: #74262c;
   transition: opacity 250ms ease;
   z-index: 9999;
-	
- 
-
 }
 
-
-.nav__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-	display: flex;
-	
-}
-
-.nav{
-	display:flex;
-	justify-content: space-between;
-	 
-}
-
-
-
-.nav__item + .nav__item{
-	margin-left: 1em;
-}
-
-.nav__link {
-	font-family: Vazirmatn, sans-serif;
-    color: #136c72;
-    text-decoration: none;
-    font-weight: medium;
-}
-
-.nav__link--button {
-    background: #fff;
-    color: #136c72;
-    padding: .25em 1em;
-    border-radius: 10em;
-}
-
-.nav__link:hover {
-    opacity: .75;
-}
-
-
-
-
-
-
-/* Style for the hamburger icon */
-.hamburger {
-  display: block;
-  width: 30px; /* Adjust the size as needed */
-  height: 3px; /* Adjust the size as needed */
-  background-color: #008C8E; /* Color of the hamburger icon */
-  margin: 6px auto; /* Spacing between the bars */
-  transition: 0.4s;
-}
-
-/* Style for the "open" and "close" states of the hamburger menu */
-.nav--visible .hamburger {
-  background-color: transparent; /* Hide the middle bar when menu is open */
-  transform: rotate(-45deg); /* Rotate the top bar */
-}
-
-.nav--visible .hamburger:before,
-.nav--visible .hamburger:after {
-  top: 0;
-  transform: rotate(45deg); /* Rotate the bottom bar */
-}
-
-
-
-
-
-
-.hamburger {
-  width: 50%;
-  position: relative;
-  z-index: 99;
-}
-
-.hamburger,
-.hamburger::before,
-.hamburger::after {
-  display: block;
-  margin: 0 auto;
-  height: 3px;
-  background: white;
-}
-
-.hamburger::before,
-.hamburger::after {
-  content: "";
+header {
+  background: #ebe0d5;
+  padding: 0.7em 0;
+  z-index: 999;
   width: 100%;
 }
 
-.hamburger::before {
-  transform: translateY(-6px);
-}
-
-.hamburger::after {
-  transform: translateY(3px);
-}
-
-
-
-
-
-
-
-/*.hero {
-    padding: 100px 0;
-    background-color: #F0EAD9;
-    color: #3B3D49;
-} */
-
 .hero {
-    padding: 100px 0;
-    background-image: url('img/background6.png'); /* Set your background image URL here */
-    max-width: 100%
-    background-repeat: no-repeat;
-    background-position: center center;
-    
+  background-color: #f2f1f0;
+  position: relative;
+  overflow: hidden;
 }
 
-
-.hero__text { 
-    width: 62%;
+.hero-img {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+  height: 100vh;
+  padding: 60px 0 70px 0;
+  background-image: url("img/hero-img.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0; /* Background image */
 }
 
-.hero__img {
-    width: 32%;
-    align-self: flex-start;
-	border-radius: 5px;
+.overlay {
+  position: absolute;
+  z-index: 2; /* Above background image */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease;
 }
 
-
-
-
-.section-title {
-	font-family: Vazirmatn, sans-serif;
-    color: #008C8E;
-	margin: 0;
-	text-align: center;
+.hero__text {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center; /* Center items horizontally */
+  width: 50%;
+  margin-top: 3em;
+  text-align: center;
 }
 
-.btn-1{
-	display: inline-block;
-    text-decoration: none; 
-    color: white;
-    font-weight: 900;
-    background-image: linear-gradient(#5C3334, #3A2021 50%);
-    padding: .75em 2em;
-    border-radius: 100px;
-	margin-top: 4em;
+.mandala-hero {
+  width: 12em;
+  height: 12em;
+  margin-bottom: 4em;
+  z-index: 3;
 }
 
-.btn-1:hover,
-.btn-1:focus {
-    opacity: .85; 
+.hero h1 {
+  z-index: 5; /* Ensure h1 is above everything else */
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 7rem;
+  color: #f9dba6;
+  text-decoration: none;
+  margin: 0 0 0.3em 0;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  text-align: center;
+  animation: typing 1.5s steps(40, end) forwards;
 }
 
-
-.btn {
-    display: inline-block;
-    text-decoration: none; 
-    color: white;
-    font-weight: 900;
-    background-color: #136C72;
-    padding: .75em 2em;
-    border-radius: 100px;
-	margin-top: 4em;
+@keyframes typing {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
 }
 
-.btn:hover,
-.btn:focus {
-    opacity: .75; 
+.hero-scroll-btn {
+  position: absolute; /* Position relative to the parent container */
+  bottom: 4em; /* Adjust the distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Center adjustment */
+  z-index: 5; /* Ensure it stays above other elements if needed */
 }
 
-.btn-center{
-	display: flex;
-	justify-content: center;
+a#scroll-btn {
+  height: 4em;
+  width: 2.5em;
+  border: 0.15em solid #fff;
+  border-radius: 1.6em;
+  display: block; /* Ensures it's treated as a block element */
 }
 
-.row {
-    display: flex;
-    justify-content: space-between;
+/* Style for the scroll button's dot */
+a#scroll-btn::before {
+  position: absolute;
+  content: "";
+  top: 50%; /* Position the dot vertically centered */
+  left: 50%; /* Position the dot horizontally centered */
+  transform: translate(-50%, -50%); /* Corrects the centering */
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #fff; /* White dot */
+  border-radius: 50%; /* Make it circular */
+  animation: move-down 2s infinite; /* Apply the animation */
 }
 
+/* Animation for the dot */
+@keyframes move-down {
+  0% {
+    transform: translate(-50%, -50%); /* Start at the centered position */
+  }
+  50% {
+    transform: translate(-50%, 10px); /* Move it downward */
+  }
 
+  80% {
+    opacity: 0.5;
+  }
 
-
-
-
-.talleres {
-    background-color: #136C72;
-	padding: 3em 0;
+  100% {
+    transform: translate(-50%, -50%); /* Return to the centered position */
+  }
 }
 
-.talleres p{
-	color: white;
+.servicios {
+  background: rgba(242, 241, 240, 1);
+  background: linear-gradient(0deg, #ebe0d5 0%, rgba(242, 241, 240, 1) 100%);
+  padding: 3em 0 0 0;
 }
 
-.talleres h2{
-	color: white;
-	
+.servicios h2 {
+  margin: 0 0 1em 0;
 }
 
-.three-col {
-	display: flex;
+.servicios h5 {
+  font-size: 1.2em; /* Increase font size */
+  margin-top: 0.5em; /* Add margin above heading */
+}
+
+.card {
+  position: relative;
+  border-radius: 12px; /* Rounded corners for the entire card */
+  overflow: hidden; /* Ensures image and other elements follow the rounded shape */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 215px; /* Fixed height for uniformity */
+  color: #fff; /* Text color for visibility on top of image */
+  cursor: pointer;
+}
+
+/* Set the image as the background of the card */
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover; /* Ensures the image covers the whole card */
+  background-position: center;
+  transition: transform 0.3s ease;
+  z-index: 1; /* Ensures background is behind the text */
+  border-radius: inherit; /* Keeps the rounded corners */
+}
+
+/* Set unique background images for each card */
+.card:nth-child(1)::before {
+  background-image: url("img/massage.jpg");
+}
+
+.card:nth-child(2)::before {
+  background-image: url("img/Reiki.jpg");
+}
+
+.card:nth-child(3)::before {
+  background-image: url("img/astrology.jpeg");
+}
+
+/* Hover effect for the background image */
+.card:hover::before {
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Title styling */
+.card h5 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Semi-transparent background for readability */
+  padding: 0.5em;
+  text-align: center;
+  z-index: 2; /* Ensures title is above the background image */
+  margin: 0; /* Remove default margin */
+  border-radius: 0 0 12px 12px; /* Matches card's rounded bottom corners */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+}
+
+/* Initial state of the cards - hidden and positioned off-screen for scrolling effect*/
+.card {
+  opacity: 0;
+  transform: translateY(20px); /* Slight vertical offset */
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.half-mandala {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+}
+
+.half-mandala-img {
+  max-width: 24em;
+  height: 12em;
+  margin-top: 3em;
+}
+
+.therapy-description {
+  position: relative; /* Permite posicionar elementos hijos en relación con este contenedor */
+  background-image: url("img/jazmin9\ \(2\).png");
+  background-size: cover;
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repetir la imagen */
+  padding: 3em 2em;
+  text-align: center;
+  color: #333; /* Ensures text remains legible */
+
+  /* Overlay effect */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(
+      255,
+      255,
+      255,
+      0.2
+    ); /* Light overlay with subtle effect */
+    z-index: 1; /* Places overlay above background image */
+  }
+
+  /* Ensures content is above overlay */
+  * {
+    position: relative;
+    z-index: 2;
+  }
+}
+
+.therapy-description .container {
+  position: relative; /* Asegura que el contenido esté correctamente posicionado */
+  z-index: 2; /* Coloca el contenido sobre el fondo */
+}
+
+.therapy-description p {
+  font-size: 16px;
+}
+
+/*Testimonials*/
+.testimonials {
+  background-color: #f9f9f9; /* Light gray background */
+  padding: 4em 1em; /* Add padding for smaller screens */
+  text-align: center;
+}
+
+.testimonials-item {
+  background: rgba(255, 182, 193, 0.2); /* Soft pink with transparency */
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border: 1px solid rgba(255, 182, 193, 0.3); /* Subtle border matching background */
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 50%; /* Ensure it fits 2 items in 100% width */
+  margin: 0 0px 1em 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  color: #333;
+  position: relative; /* Ensures items layer above other elements */
+}
+
+/* Testimonial text */
+.testimonials-item p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #4a4a4a; /* Softer black for a modern feel */
+}
+
+/* Rating stars */
+.testimonials-item .rating {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #9a2e37;
+}
+
+.swiper-scrollbar {
+  background-color: #f9f9f9; /* White background for the scrollbar track */
+  margin-top: 2em;
+  height: px; /* Reduced height for the scrollbar */
+}
+
+/* Pagination dots style */
+.swiper-pagination-bullet {
+  background-color: rgba(255, 182, 193, 0.8); /* Soft pink for inactive dots */
+  opacity: 1; /* Ensure full opacity */
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 50%; /* Circular dots */
+}
+
+/* Active dot style */
+.swiper-pagination-bullet-active {
+  background-color: #892630; /* Darker pink for the active dot */
+}
+
+.colums {
+  display: flex;
 }
 
 .col {
-	width: 100%;
-	padding-top: 1em;
-	
+  width: 100%;
+  padding-top: 1em;
 }
-
-
 
 .col + .col {
-	margin-left: 1em;
+  margin-left: 4em;
 }
 
-.descubre-productos {
-	padding: 3em 0;
+.text-center {
+  width: 100%;
+  padding-top: 1em;
+  text-align: center; /* Center the content within each column */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center items vertically within the column */
 }
 
-
-/* Gallery */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(4, 12.5rem);
-    gap: .5rem;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
 }
 
-/* Gallery Layout */
-.gallery__item--1 {
-    grid-column: 1 / span 1;
-    grid-row: 1 / span 1;
+.heading-box {
+  margin-bottom: 1em;
 }
 
-.gallery__item--2 {
-    grid-column: 1 / span 1;
-    grid-row: 2 / span 1;
+.section-title {
+  color: #333;
+  margin: 0;
 }
 
-.gallery__item--3 {
-    grid-column: 2 / span 1;
-    grid-row: 1 / span 2;
+.intro-text {
+  font-size: 1.2em;
+  color: #666;
+  margin-bottom: 2em;
 }
 
-.gallery__item--4 {
-    grid-column: 3 / span 1;
-    grid-row: 1 / span 3;
+.call-action {
+  margin-top: 6em;
 }
 
-.gallery__item--5 {
-    grid-column: 1 / span 2;
-    grid-row: 3 / span 2;
+.crystals {
+  position: relative;
+  z-index: 1; /* Keep crystals below hero section */
+  background-image: url("img/shadow.png");
+  background-size: 100% auto; /* Set width to 100% and keep aspect ratio */
+  background-repeat: no-repeat; /* Prevent repeating */
+  padding-top: 0.8em;
 }
 
-.gallery__item--6 {
-    grid-column: 3 / span 1;
-    grid-row: 4 / span 1;
+.crystals-img {
+  position: relative;
+  z-index: 2; /* Ensure it's above background */
+  max-width: 100%;
+  margin: 0 auto;
+  height: 65vh;
+  padding: 60px 0 70px 0;
+  background-image: url("img/crystals.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Gallery Link */
-.gallery__link {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+.crystals-overlay {
+  position: absolute;
+  z-index: 3; /* Ensure it's above crystals-img */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0); /* Start transparent */
+  transition: background-color 0.3s ease;
 }
-
-/* Gallery Link Overlay */
-.gallery__overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background: rgba(0, 0, 0, 0.4);
-    font-size: 1.5rem;
-    color: #fff;
-    font-weight: 700;
-    text-transform: uppercase;
-
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity .2s;
-}
-
-.gallery__link:hover .gallery__overlay {
-    opacity: 1;
-}
-
-/* Gallery Overlay Text */
-.gallery__overlay span {
-    position: relative;
-    line-height: 3rem;
-}
-
-.gallery__overlay span:before,
-.gallery__overlay span:after {
-    content: '';
-    position: absolute;
-    height: 2px;
-    width: 0;
-    background: #fff;
-    transition: width .3s ease-out .2s;
-}
-
-.gallery__overlay span:before {
-    top: 0;
-    left: 0;
-}
-
-.gallery__overlay span:after {
-    bottom: 0;
-    right: 0;
-}
-
-.gallery__link:hover .gallery__overlay span:before,
-.gallery__link:hover .gallery__overlay span:after {
-    width: 100%;    
-}
-
-
-/* Gallery Image */
-.gallery__image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: scale(1.05);
-    transition: 
-        transform .5s,
-        filter .5s;
-}
-
-.gallery__link:hover .gallery__image {
-    transform: scale(1.2);
-    filter: blur(2px);
-}
-
-
 
 /*Footer style*/
 .footer {
-  background-image: linear-gradient(#5C3334, #3A2021 50%);
-  color: #d3d3d3;
+  background: linear-gradient(to bottom, rgba(116, 38, 44, 0.5), #74262c),
+    url("img/shadow.png") top center no-repeat;
+  background-size: cover; /* Ensures the image covers the width */
+  color: #f9dba6;
   position: relative;
   padding: 2.5em 0; /* Add padding to the top and bottom */
   text-align: center;
 }
-
 
 .footer .footer-content {
   display: flex;
@@ -440,7 +702,6 @@ header {
   height: 100%; /* Set height to 100% for responsiveness */
 }
 
-
 .footer-left-section,
 .footer-right-section {
   flex: 1;
@@ -448,74 +709,112 @@ header {
   min-width: 200px; /* Reduce min-width for smaller screens */
 }
 
-.footer-left-section{
-		font-family: Roboto Flex, sans-serif;
-		font-weight: 500;
-		font-size: 32px;
-		color: white;
-	}
+.footer-left-section {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Make sure it uses the available height of the parent container */
+}
 
+.footer-logo p {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 4em;
+  color: #f9dba6;
+  text-decoration: none;
+  margin: 0;
+  position: relative; /* Positioned relative to stack above mandala */
+  z-index: 1; /* Ensure it is on top of the mandala */
+}
 
-.footer-middle-section{
-		width: 3px;
-		border-left: 2px solid #F0EAD9;
-		height: 190px;
-		position: absolute;
-		left: 50%;
-		margin-left: -3px;
-		
-	}
+.footer-mandala {
+  position: absolute; /* Position relative to the footer-left-section */
+  top: 50%; /* Move to vertical center */
+  left: 50%; /* Move to horizontal center */
+  transform: translate(-50%, -50%); /* Adjust for element's own size */
+  z-index: 0; /* Ensure it is behind the logo */
+}
 
+.footer-mandala-img {
+  width: 8em;
+  height: 8em;
+  opacity: 0.6;
+}
 
+.myname {
+  font-family: Roboto, sans-serif;
+  font-size: 22px;
+  font-weight: light;
+  margin-bottom: 20px;
+  color: #f9dba6;
+  text-align: left;
+  margin-left: 2.5em;
+}
 
+.myname p {
+  padding: 0;
+}
 
-.myname{
-		font-family: Roboto Flex, sans-serif;
-		font-size: 26px;
-		font-weight: 400;
-		margin-bottom: 20px;
-		color: white;
-		margin-left: 1.5em;
-		
-	}
-	
-.myname p{
-	padding: 0;
-	
-}	
-	
-	
-	.social-media{
-		display: flex;
-		align-items: center;
-		font-family: Roboto Flex, sans-serif;
-		color: white;
-		font-size: 18px;
-		font-weight: 400;
-		margin-left: 2.5em;
-	}
-	
-	.social-media p{
-		padding: .5em;;
-		margin: 0;
-	}
-	
-	.icon{
-		height: 28px;
-		margin-right: .1em;
-		color: #E5CEB7;
-		}
-	
-	.linkedin-icon{
-		height: 28px;
-	}
+.social-media {
+  display: flex;
+  align-items: center;
+  font-family: Roboto, sans-serif;
+  color: #f9dba6;
+  font-size: 18px;
+  font-weight: light;
+  margin-left: 2.5em;
+}
 
+.social-media p {
+  padding: 0.5em;
+  margin: 0;
+}
 
+.icon {
+  height: 24px;
+  margin-right: 0.1em;
+  color: #f9dba6;
+  cursor: pointer;
+}
+
+.icon-2 {
+  height: 32px;
+  margin-right: 0.1em;
+  color: #f9dba6;
+  cursor: pointer;
+}
+
+.footer-whatsapp-icon {
+  position: fixed; /* Fixed position keeps it in view while scrolling */
+  right: 10px; /* Adjust the distance from the right side */
+  bottom: 10px; /* Adjust the distance from the bottom */
+  z-index: 100; /* Ensure it's above other content */
+}
+
+.whatsapp-icon {
+  height: 50px;
+  width: auto;
+  cursor: pointer; /* Change cursor to pointer for better UX */
+  transition: transform 0.3s ease; /* Smooth scaling effect */
+}
+
+.linkedin-icon {
+  height: 28px;
+}
+
+.address p {
+  text-align: left;
+}
+
+.address {
+  text-align: left;
+}
 
 /*footer media*/
 
 @media (max-width: 800px) {
-   
   .footer .footer-content {
     flex-direction: column; /* Stack items vertically */
     text-align: center; /* Center-align text */
@@ -527,7 +826,7 @@ header {
     width: 100%; /* Make sections take full width */
     margin: 10px 0; /* Add vertical margin for spacing */
   }
-  
+
   /* Hide the middle section for small screens */
   .footer-middle-section {
     width: 0;
@@ -535,175 +834,220 @@ header {
     display: none;
   }
 
-.social-media{
-	margin: 10px 0;
+  .social-media {
+    margin: 10px 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-left: 3em;
+  }
+
+  .myname {
+    margin-left: 3em;
+  }
 }
-
-.myname{
-	margin-left: 0;
-}
-  
-}
-
-
-
-
-
-
-
-
 
 /*nav media*/
 
-@media screen and (max-width: 800px) {
-	
-	 .nav {
+@media screen and (max-width: 900px) {
+  .nav {
+    transition: max-height 7.9s ease; /* Aquí ajustas la duración (0.5s en este ejemplo) y el tipo de animación (ease) */
+
     display: none; /* Hide the navigation menu by default on small screens */
-	 text-align: center; 
+    text-align: center;
   }
-  
+
   .nav--visible {
     display: block; /* Show the navigation menu when the "nav--visible" class is added */
   }
-	.nav__list{
-		display: block;
-		text-align: center; /* Center align the list items within the centered menu */
-		margin: 0 auto; /* Center the list items horizontally */
-	}
-	
-	.nav__item {
+
+  .soulconnection-logo {
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  .nav__list {
+    display: block;
+    text-align: center; /* Center align the list items within the centered menu */
+    margin: 0 auto; /* Center the list items horizontally */
+  }
+
+  .nav__item {
     display: block;
     margin: 0; /* Remove any margin for list items */
   }
-	
-	  .nav__link {
+
+  .nav__link {
     display: inline-block; /* Ensure links are inline-block for centering */
     margin: 0; /* Remove any margin for links */
   }
 
-	
-	.nav__item + .nav__item{
-	margin-left: 0;
-}
+  .nav__item + .nav__item {
+    margin-left: 0;
+  }
 
-	.first__list{
-		margin-bottom: 1.5em !important;
-	}
+  .first__list {
+    margin-bottom: 1.5em !important;
+  }
 
-	.siendotierra-logo{
-		color: #F0EAD9;
-		margin-bottom: 3em !important; /*fix it is not working*/
-	}
-	
-	.nav__link {
-	    color: #F0EAD9;
-	}
-	
-	 .nav__item {
+  .nav__link {
+    color: #74262c;
+  }
+
+  .nav__item {
     display: block;
-    }
-	
-	
-	header {
-		background-color: #136C72;
-		padding: .7em 0;
-	}
-    
-	.hero__text {
-        width: 100%;
-    }
-    .hero__img {
-        width: 100%;
-    }
-	.hero{
-		width: 100%;
-	}
-	
-	.row {
-		display: block;
-	}
-	
-	
-	
+  }
+
+  header {
+    background: #ede8e0;
+    padding: 0.7em 0;
+  }
+
+  h1 {
+    font-size: 2.7rem;
+
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1;
+  }
+
+  h2 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .section-title {
+    margin-bottom: 0.5em;
+  }
+
+  .hero h1 {
+    margin-top: 0.5em;
+  }
+
+  .mandala-hero {
+    width: 12em;
+    height: 12em;
+    margin-top: 1.5em; /* Space between the title and mandala */
+  }
+
+  .hero__text {
+    width: 100%;
+  }
+
+  .hero {
+    width: 100%;
+  }
+
+  .bottom-space {
+    padding-bottom: 2em;
+  }
+
+  .row {
+    display: block;
+  }
+
+  .col + .col {
+    margin-left: 0;
+  }
+
+  .colums {
+    display: block;
+  }
+  .col {
+    margin-top: 2em;
+  }
 }
 
-
-@media screen and (min-width: 801px) {
+@media screen and (min-width: 901px) {
   .hamburger {
     display: none;
   }
-  
+
   .nav-toggle {
     display: none;
   }
 }
 
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 5rem;
+    margin-top: 1em;
+  }
 
+  .mandala-hero {
+    width: 12em;
+    height: 12em;
+    margin-top: 1.5em; /* Space between the title and mandala */
+  }
 
-/*Gallery media*/
+  .hero-scroll-btn {
+    margin-bottom: 2.5em;
+  }
 
-@media screen and (max-width: 60rem) {
-    .wrapper {
-        padding: 1rem;
-    }
+  .testimonials-item {
+    max-width: 100%; /* Utilize full space on larger devices */
+  }
 
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
+  .crystals {
+    background-size: 120% auto; /* Increase size slightly for larger screens */
+    background-position: center top; /* Adjust positioning to top-center */
+  }
 
-    /* Gallery Layout */
-    .gallery__item--1 {
-        grid-column: 1 / span 1;
-        grid-row: 1 / span 1;
-    }
-
-    .gallery__item--2 {
-        grid-column: 1 / span 1;
-        grid-row: 2 / span 1;
-    }
-
-    .gallery__item--3 {
-        grid-column: 2 / span 1;
-        grid-row: 1 / span 2;
-    }
-
-    .gallery__item--4 {
-        grid-column: 1 / span 1;
-        grid-row: 3 / span 2;
-    }
-
-    .gallery__item--5 {
-        grid-column: 2 / span 1;
-        grid-row: 3 / span 1;
-    }
-
-    .gallery__item--6 {
-        grid-column: 2 / span 1;
-        grid-row: 4 / span 1;
-    }
-
-    .gallery__overlay {
-        font-size: 1.25rem;
-    }
+  .crystals-img {
+    background-position: center top; /* Move the focus to the top of the image */
+    height: 50vh; /* Reduces height of the crystals image for smaller screens */
+  }
 }
 
-@media screen and (max-width: 35rem) {
-    .gallery {
-        display: block;
-    }
+@media (max-width: 480px) {
+  .hero-img {
+    height: 90vh;
+  }
 
-    .gallery__item {
-        margin: .5rem;
-    }
+  .hero h1 {
+    font-size: 4.5rem;
+    margin-top: 1.3em;
+  }
 
-    .gallery__link {
-        height: 80vw;
-    }
+  .mandala-hero {
+    width: 10em;
+    height: 10em;
+    margin-bottom: 1.8em;
+  }
 
-    .gallery__overlay {
-        font-size: 1rem;
-    }
+  .hero-scroll-btn {
+    margin-bottom: 1em;
+  }
+
+  .crystals {
+    background-size: 150% auto; /* Scale up slightly to cover more area */
+    background-position: center top; /* Position it at the top */
+  }
+
+  .crystals-img {
+    height: 45vh;
+    background-position: top center; /* Move the image so the crystals are less centered */
+  }
+
+  .card.visible {
+    opacity: 1;
+    transform: translateY(0); /* Cards come from the top */
+  }
+}
+
+/* Scroll-in animation for large screens */
+/* Make animation slower for larger screens */
+@media (min-width: 768px) {
+  .card {
+    transition: transform 1.4s ease, opacity 1.4s ease; /* Slow down the animation */
+  }
+
+  .card.visible {
+    transition-delay: 0.8s; /* Stagger the visible class with a delay for better effect */
+  }
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0); /* Reset the position when visible */
 }
