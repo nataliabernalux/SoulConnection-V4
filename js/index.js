@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        heroTitle.style.animation = "typing 1.5s steps(40, end) forwards";
+        heroTitle.style.animation = "fadeIn 1.5s ease-out forwards";
       }
     },
     { threshold: 0.5 }
