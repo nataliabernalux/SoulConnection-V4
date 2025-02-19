@@ -28,23 +28,21 @@ document.addEventListener("DOMContentLoaded", function () {
   var heroImg = document.querySelector(".hero-img");
   var overlay = document.querySelector(".overlay");
 
-  // Function to update parallax and darkening effects
   function updateEffects() {
     var scrollPos = window.scrollY;
 
     // Parallax effect
     heroImg.style.transform = "translateY(" + scrollPos * 0.4 + "px)";
 
-    // Darken overlay color
-    var darkenAmount = Math.pow(scrollPos / (heroImg.clientHeight / 2), 2);
-    var darkColor = "rgba(0, 0, 0, " + Math.min(darkenAmount, 0.4) + ")";
-    overlay.style.backgroundColor = darkColor;
+    // Darken overlay but limit intensity to keep the curve visible
+    var darkenAmount = Math.min(
+      Math.pow(scrollPos / (heroImg.clientHeight / 2), 2),
+      0.3
+    );
+    overlay.style.backgroundColor = "rgba(0, 0, 0, " + darkenAmount + ")";
   }
 
-  // Initialize on page load
   updateEffects();
-
-  // Update on scroll
   window.addEventListener("scroll", updateEffects);
 });
 
@@ -63,48 +61,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// h1 animation, main title
+// h1 animation, main title and mandala fade in
 
 document.addEventListener("DOMContentLoaded", () => {
   const heroTitle = document.querySelector(".hero__text h1");
+  const mandalaHero = document.querySelector(".mandala-hero");
 
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
-        heroTitle.style.animation = "fadeIn 1.5s ease-out forwards";
+        heroTitle.style.animation = "fadeIn 2s ease-in forwards";
+        mandalaHero.style.animation = "fadeIn 1s ease-in forwards";
+        mandalaHero.style.animationDelay = "1s"; // Add delay dynamically
       }
     },
     { threshold: 0.5 }
   );
 
   observer.observe(document.querySelector(".hero"));
-});
-
-//card scroll animation
-
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".card");
-
-  // Create IntersectionObserver instance
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          // Apply staggered animation by adding a transition delay
-          entry.target.style.transitionDelay = `${index * 150}ms`;
-          entry.target.classList.add("visible"); // Add class to trigger animation
-          observer.unobserve(entry.target); // Stop observing once it's visible
-        }
-      });
-    },
-    { threshold: 0.1 }
-  ); // Trigger when 10% of the card is visible
-
-  // Observe each card
-  cards.forEach((card) => {
-    card.classList.remove("visible"); // Make sure cards are hidden initially
-    observer.observe(card); // Start observing each card
-  });
 });
 
 //testimonials swiper
@@ -124,10 +98,10 @@ const swiper = new Swiper(".js-testimonials-slider", {
     clickable: true,
   },
   breakpoints: {
-    767: {
-      slidesPerView: 2, // For medium screens
+    768: {
+      slidesPerView: 1, // Show only one testimonial on tablet
     },
-    1024: {
+    1100: {
       slidesPerView: 2, // Ensure full 2 slides
       spaceBetween: 40, // Reduce space to fit better
     },

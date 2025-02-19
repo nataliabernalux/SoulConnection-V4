@@ -23,8 +23,17 @@ p {
 img {
   max-width: 100%;
 }
+/* h1 fade in animation and Style*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 
-h1 {
+.hero__text h1 {
   font-family: "Italianno", cursive;
   font-weight: 400;
   font-style: normal;
@@ -32,15 +41,15 @@ h1 {
   color: #f9dba6;
   text-decoration: none;
   margin: 0;
+  opacity: 0; /* Start invisible */
 }
 
 h2 {
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 2.3em;
-  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: 2.5rem;
   margin-bottom: 1em;
   padding: 0;
-  text-align: center;
   letter-spacing: -0.01em;
 
   /* Gradient text effect */
@@ -65,15 +74,16 @@ h3 {
 }
 
 h4 {
-  text-transform: uppercase;
-  color: #74262c;
-  font-family: Vazirmatn, sans-serif;
-  font-weight: 400;
+  font-size: 1em;
+  color: #3a3a3a;
+  font-family: "Roboto Flex";
+  font-weight: bold;
   margin: 0;
+  padding-top: 1em;
 }
 
 h5 {
-  font-size: 20px;
+  font-size: 1em;
   color: #3a3a3a;
   font-family: "Roboto Flex", sans-serif;
   font-weight: bold;
@@ -141,6 +151,7 @@ h5 {
   width: 50px;
   height: 50px;
   margin-right: 0.3em; /* Space between the logo and the text */
+  margin-bottom: 10px;
 }
 
 /* -------------------------------- */
@@ -291,9 +302,9 @@ header {
 }
 
 .hero {
-  background-color: #f2f1f0;
   position: relative;
   overflow: hidden;
+  border-bottom-left-radius: 200px;
 }
 
 .hero-img {
@@ -320,6 +331,7 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
+  border-bottom-left-radius: 22%;
   background-color: rgba(0, 0, 0, 0.2);
   transition: background-color 0.3s ease;
 }
@@ -338,6 +350,9 @@ header {
   height: 12em;
   margin-bottom: 4em;
   z-index: 3;
+  opacity: 0; /* Start invisible */
+  animation: fadeIn 1s ease-in forwards; /* Even faster fade-in duration */
+  animation-delay: 1s; /* Start after h1 finishes */
 }
 
 .hero h1 {
@@ -414,101 +429,25 @@ a#scroll-btn::before {
 }
 
 .servicios {
-  background: rgba(242, 241, 240, 1);
-  background: linear-gradient(0deg, #ebe0d5 0%, rgba(242, 241, 240, 1) 100%);
-  padding: 3em 0 0 0;
 }
 
 .servicios h2 {
-  margin: 0 0 1em 0;
+  margin: 0 0 0.3em 0;
+  text-align: left;
 }
 
-.servicios h5 {
-  font-size: 1.2em; /* Increase font size */
-  margin-top: 0.5em; /* Add margin above heading */
+.mini-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3em 4em;
 }
 
-.card {
-  position: relative;
-  border-radius: 12px; /* Rounded corners for the entire card */
-  overflow: hidden; /* Ensures image and other elements follow the rounded shape */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 215px; /* Fixed height for uniformity */
-  color: #fff; /* Text color for visibility on top of image */
-  cursor: pointer;
-}
-
-/* Set the image as the background of the card */
-.card::before {
-  content: "";
-  position: absolute;
+.cuencos {
   top: 0;
-  left: 0;
   right: 0;
-  bottom: 0;
-  background-size: cover; /* Ensures the image covers the whole card */
-  background-position: center;
-  transition: transform 0.3s ease;
-  z-index: 1; /* Ensures background is behind the text */
-  border-radius: inherit; /* Keeps the rounded corners */
-}
-
-/* Set unique background images for each card */
-.card:nth-child(1)::before {
-  background-image: url("img/massage.jpg");
-}
-
-.card:nth-child(2)::before {
-  background-image: url("img/Reiki.jpg");
-}
-
-.card:nth-child(3)::before {
-  background-image: url("img/astrology.jpeg");
-}
-
-/* Hover effect for the background image */
-.card:hover::before {
-  transform: scale(1.05); /* Slight zoom on hover */
-}
-
-/* Title styling */
-.card h5 {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Semi-transparent background for readability */
-  padding: 0.5em;
-  text-align: center;
-  z-index: 2; /* Ensures title is above the background image */
-  margin: 0; /* Remove default margin */
-  border-radius: 0 0 12px 12px; /* Matches card's rounded bottom corners */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.3); /* Shadow for depth */
-}
-
-/* Initial state of the cards - hidden and positioned off-screen for scrolling effect*/
-.card {
-  opacity: 0;
-  transform: translateY(20px); /* Slight vertical offset */
-  transition: transform 0.8s ease, opacity 0.8s ease;
-}
-
-.half-mandala {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-}
-
-.half-mandala-img {
-  max-width: 24em;
-  height: 12em;
-  margin-top: 3em;
+  max-width: 100%; /* Ajusta según el tamaño que quieras */
+  height: auto;
+  border-bottom-right-radius: 200px;
 }
 
 .therapy-description {
@@ -555,6 +494,56 @@ a#scroll-btn::before {
 }
 
 /*Testimonials*/
+.testimonials-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.testimonial-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px; /* Space between image and text */
+  flex: 1;
+  max-width: 40%;
+}
+
+.testimonial-image img {
+  width: 80px;
+  height: auto;
+  border-radius: 10%;
+}
+
+.testimonial-text {
+  flex: 1;
+  text-align: left;
+}
+
+.testimonials-content {
+  flex: 1;
+  max-width: 60%;
+}
+
+.testimonial-info .rating {
+  margin-top: 15px;
+  font-size: 14px;
+  color: #851630;
+}
+
+.testimonials-button {
+  background-color: #7f1212;
+  color: #f0e9e3;
+  font-weight: 500;
+  border-style: none;
+  padding: 1em;
+  border-radius: 10px;
+}
+
+.testimonials-content {
+  flex: 1;
+  max-width: 60%;
+}
+
 .testimonials {
   background-color: #f9f9f9; /* Light gray background */
   padding: 4em 1em; /* Add padding for smaller screens */
@@ -562,10 +551,10 @@ a#scroll-btn::before {
 }
 
 .testimonials-item {
-  background: rgba(255, 182, 193, 0.2); /* Soft pink with transparency */
+  background-color: #faeef0; /* Soft pink with transparency */
   backdrop-filter: blur(10px); /* Glass effect */
   -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border: 1px solid rgba(255, 182, 193, 0.3); /* Subtle border matching background */
+  border: 1.8px solid #e8a2b3; /* Subtle border matching background */
   padding: 30px;
   border-radius: 20px;
   max-width: 50%; /* Ensure it fits 2 items in 100% width */
@@ -586,7 +575,7 @@ a#scroll-btn::before {
 .testimonials-item .rating {
   margin-top: 15px;
   font-size: 14px;
-  color: #9a2e37;
+  color: #851630;
 }
 
 .swiper-scrollbar {
@@ -610,13 +599,12 @@ a#scroll-btn::before {
   background-color: #892630; /* Darker pink for the active dot */
 }
 
-.colums {
+.row {
   display: flex;
 }
 
 .col {
   width: 100%;
-  padding-top: 1em;
 }
 
 .col + .col {
@@ -856,6 +844,40 @@ a#scroll-btn::before {
   }
 }
 
+@media (max-width: 1100px) {
+  .testimonials-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .testimonial-info {
+    max-width: 40%;
+  }
+
+  .testimonials-content {
+    max-width: 50%; /* Adjust size for better balance */
+  }
+
+  .testimonials-item {
+    max-width: 100%; /* Ensures it takes up full width */
+  }
+}
+
+/* Mobile layout */
+@media (max-width: 767px) {
+  .testimonials-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-info,
+  .testimonials-content {
+    max-width: 100%;
+  }
+}
+
 /*nav media*/
 
 @media screen and (max-width: 900px) {
@@ -988,7 +1010,7 @@ a#scroll-btn::before {
   .mandala-hero {
     width: 12em;
     height: 12em;
-    margin-top: 1.5em; /* Space between the title and mandala */
+    margin-top: 0; /* Space between the title and mandala */
   }
 
   .hero-scroll-btn {
@@ -999,6 +1021,15 @@ a#scroll-btn::before {
     max-width: 100%; /* Utilize full space on larger devices */
   }
 
+  .testimonials-wrapper {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .testimonial-info,
+  .testimonials-content {
+    max-width: 100%;
+  }
   .crystals {
     background-size: 120% auto; /* Increase size slightly for larger screens */
     background-position: center top; /* Adjust positioning to top-center */
@@ -1023,7 +1054,7 @@ a#scroll-btn::before {
   .mandala-hero {
     width: 10em;
     height: 10em;
-    margin-bottom: 1.8em;
+    margin-top: 0;
   }
 
   .hero-scroll-btn {
