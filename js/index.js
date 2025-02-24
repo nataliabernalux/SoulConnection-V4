@@ -107,3 +107,10 @@ const swiper = new Swiper(".js-testimonials-slider", {
     },
   },
 });
+
+//myVideo
+
+function activarSonido() {
+  let video = document.getElementById("miVideo");
+  video.muted = !video.muted; // Alterna entre silenciado y con sonido
+}
