@@ -267,7 +267,7 @@ header.scrolled .hamburger::after {
 /* Miscellaneous */
 /* -------------------------------- */
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -432,8 +432,12 @@ a#scroll-btn::before {
   }
 }
 
+.servicios {
+  padding-bottom: 3em;
+}
+
 .servicios h2 {
-  margin: 0 0 0.3em 0;
+  padding: 0 0 0.3em 0;
   text-align: left;
 }
 

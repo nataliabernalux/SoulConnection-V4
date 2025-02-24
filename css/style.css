@@ -267,7 +267,7 @@ header.scrolled .hamburger::after {
 /* Miscellaneous */
 /* -------------------------------- */
 .container {
-  width: 80%;
+  width: 90%;
   max-width: 1100px;
   margin: 0 auto;
 }
@@ -298,6 +298,11 @@ header {
   padding: 0.7em 0;
   z-index: 999;
   width: 100%;
+}
+
+.beige-background {
+  background: rgba(242, 241, 240, 1);
+  background: linear-gradient(0deg, #ebe0d5 0%, rgba(242, 241, 240, 1) 100%);
 }
 
 .hero {
@@ -428,10 +433,11 @@ a#scroll-btn::before {
 }
 
 .servicios {
+  padding-bottom: 3em;
 }
 
 .servicios h2 {
-  margin: 0 0 0.3em 0;
+  padding: 0 0 0.3em 0;
   text-align: left;
 }
 
@@ -449,47 +455,74 @@ a#scroll-btn::before {
   border-bottom-right-radius: 200px;
 }
 
-.therapy-description {
-  position: relative; /* Permite posicionar elementos hijos en relación con este contenedor */
-  background-image: url("img/jazmin9\ \(2\).png");
+.my-video {
+  max-width: 100%;
+}
+
+/* SOLO afecta la segunda fila (row que contiene el video y texto) */
+.row:nth-of-type(2) {
+  display: flex;
+}
+
+.astrology .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Ocupa todo el ancho disponible */
+}
+
+.astrology {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em 1em;
+  text-align: center;
+
+  position: relative;
+  background-image: url("img/moon-mandala2.png");
   background-size: cover;
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita repetir la imagen */
-  padding: 3em 2em;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%; /* Asegura que no se desborde */
+  max-width: 100%; /* Evita que la imagen sea más grande que el contenedor */
   text-align: center;
   color: #333; /* Ensures text remains legible */
-
-  /* Overlay effect */
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(
-      255,
-      255,
-      255,
-      0.2
-    ); /* Light overlay with subtle effect */
-    z-index: 1; /* Places overlay above background image */
-  }
-
-  /* Ensures content is above overlay */
-  * {
-    position: relative;
-    z-index: 2;
-  }
 }
 
-.therapy-description .container {
-  position: relative; /* Asegura que el contenido esté correctamente posicionado */
-  z-index: 2; /* Coloca el contenido sobre el fondo */
+.astrology h2 {
+  margin: 0;
 }
 
-.therapy-description p {
+.astrology p {
   font-size: 16px;
+  color: #1c1c1c;
+}
+
+.astrology-card {
+  background-color: rgba(
+    250,
+    238,
+    240,
+    0.5
+  ); /* Aplica transparencia solo al fondo */
+  backdrop-filter: blur(10px); /* Glass effect */
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.8px solid #e8a2b3;
+  border-radius: 20px;
+  width: 90%; /* Hace que se ajuste en pantallas pequeñas */
+  max-width: 50em; /* Mantiene un ancho máximo en pantallas grandes */
+  padding: 3em 4em;
+  margin: 6.5em 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  position: relative; /* Ensures items layer above other elements */
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .astrology-card {
+    padding: 2em; /* Reduce padding en móviles */
+    width: 95%; /* Se adapta más */
+  }
 }
 
 /*Testimonials*/
@@ -1020,9 +1053,27 @@ a#scroll-btn::before {
     max-width: 100%; /* Utilize full space on larger devices */
   }
 
+  /* Cambiar el orden de video y texto */
+
+  .row:nth-of-type(2) {
+    flex-direction: column; /* Apilar en columna en móvil/tablet */
+  }
+
+  .row:nth-of-type(2) .mini-container:first-child {
+    order: 2; /* Poner el video debajo */
+  }
+
+  .row:nth-of-type(2) .mini-container:last-child {
+    order: 1; /* Poner el texto arriba */
+  }
+
   .testimonials-wrapper {
     flex-direction: column;
     text-align: center;
+  }
+
+  .mini-container {
+    padding: 1em 2em;
   }
 
   .testimonial-info,
@@ -1058,6 +1109,10 @@ a#scroll-btn::before {
 
   .hero-scroll-btn {
     margin-bottom: 1em;
+  }
+
+  .cuencos {
+    border-bottom-right-radius: 130px;
   }
 
   .crystals {
