@@ -464,6 +464,10 @@ a#scroll-btn::before {
   display: flex;
 }
 
+.astrology h2 {
+  padding: 0 0 0.3em 0;
+}
+
 .astrology .container {
   display: flex;
   justify-content: center;

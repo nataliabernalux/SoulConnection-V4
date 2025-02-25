@@ -464,6 +464,10 @@ a#scroll-btn::before {
   display: flex;
 }
 
+.astrology h2 {
+  padding: 0 0 0.3em 0;
+}
+
 .astrology .container {
   display: flex;
   justify-content: center;
@@ -731,6 +735,10 @@ a#scroll-btn::before {
   align-items: center;
   justify-content: center;
   height: 100%; /* Set height to 100% for responsiveness */
+}
+
+iframe {
+  border-radius: 1em;
 }
 
 .footer-left-section,
