@@ -45,8 +45,8 @@ img {
 }
 
 h2 {
-  font-family: "Playfair Display", serif;
-  font-weight: 500;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 400;
   font-size: 2.5rem;
   padding: 0;
   letter-spacing: -0.01em;
@@ -144,6 +144,7 @@ h5 {
 .logo-container {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .nav-logo {
