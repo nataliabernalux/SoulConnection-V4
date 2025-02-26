@@ -465,6 +465,24 @@ a#scroll-btn::before {
   display: flex;
 }
 
+.mandala-50 {
+  opacity: 50%;
+  width: 18em;
+  margin-top: 2em;
+}
+
+.mandala-50-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (max-width: 1115px) {
+  .mandala-50 {
+    display: none;
+  }
+}
+
 .astrology h2 {
   padding: 0 0 0.3em 0;
 }
@@ -735,6 +753,7 @@ a#scroll-btn::before {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 2em;
   height: 100%; /* Set height to 100% for responsiveness */
 }
 
@@ -795,6 +814,10 @@ iframe {
 
 .myname p {
   padding: 0;
+}
+
+.social-media a {
+  text-decoration: none;
 }
 
 .social-media {
