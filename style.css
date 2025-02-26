@@ -477,12 +477,6 @@ a#scroll-btn::before {
   align-items: center;
 }
 
-@media (max-width: 1115px) {
-  .mandala-50 {
-    display: none;
-  }
-}
-
 .astrology h2 {
   padding: 0 0 0.3em 0;
 }
@@ -908,6 +902,12 @@ iframe {
   }
 }
 
+@media (max-width: 1115px) {
+  .mandala-50 {
+    display: none;
+  }
+}
+
 @media (max-width: 1100px) {
   .testimonials-wrapper {
     display: flex;
@@ -944,7 +944,7 @@ iframe {
 
 /*nav media*/
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1007px) {
   .nav {
     transition: max-height 7.9s ease; /* Aquí ajustas la duración (0.5s en este ejemplo) y el tipo de animación (ease) */
 
@@ -954,6 +954,10 @@ iframe {
 
   .nav--visible {
     display: block; /* Show the navigation menu when the "nav--visible" class is added */
+  }
+
+  .nav-toggle {
+    display: block; /* Muestra el botón de hamburguesa */
   }
 
   .soulconnection-logo {
@@ -1054,13 +1058,13 @@ iframe {
   }
 }
 
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 1008px) {
   .hamburger {
     display: none;
   }
 
   .nav-toggle {
-    display: none;
+    display: none; /* Oculta el botón en pantallas grandes */
   }
 }
 
