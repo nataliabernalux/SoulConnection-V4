@@ -613,11 +613,69 @@ a#scroll-btn::before {
   position: relative; /* Ensures items layer above other elements */
 }
 
+.testimonials-item {
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  height: 270px; /* Or whatever height fits your design */
+  transition: height 0.3s ease;
+}
+
+.testimonials-item.expanded {
+  height: auto; /* When expanded, show the whole content */
+}
+
+.testimonials-item .read-more {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #7f1212;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.testimonials-item.expanded .read-more {
+  display: none; /* Hide "Ver más" when expanded */
+}
+
+.read-less {
+  display: none;
+  position: absolute;
+  color: #7f1212;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.testimonials-item.expanded .read-less {
+  display: inline-block; /* Show when expanded */
+}
+
+.testimonials-item.expanded .read-more {
+  display: none; /* Hide 'Ver más' when expanded */
+}
+
 /* Testimonial text */
 .testimonials-item p {
   font-size: 16px;
   line-height: 1.5;
   color: #4a4a4a; /* Softer black for a modern feel */
+
+  overflow: hidden;
+  max-height: 100px; /* Limit paragraph height */
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  transition: max-height 0.3s ease;
+}
+
+.testimonials-item.expanded p {
+  max-height: 1000px; /* A high value to show all the text */
 }
 
 /* Rating stars */
@@ -625,6 +683,32 @@ a#scroll-btn::before {
   margin-top: 15px;
   font-size: 14px;
   color: #851630;
+}
+
+.testimonials-profile {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  gap: 8px; /* Space between items */
+}
+
+.profile-img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  overflow: hidden; /* In case the image exceeds the round shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-name h5 {
+  padding: 0;
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 3em;
 }
 
 .swiper-scrollbar {

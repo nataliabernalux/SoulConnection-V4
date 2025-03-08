@@ -107,3 +107,18 @@ const swiper = new Swiper(".js-testimonials-slider", {
     },
   },
 });
+
+//Testimonials paragraph To Toggle the "Ver más" "ver menos"
+
+document.querySelectorAll(".testimonials-item").forEach(function (item) {
+  const readMoreBtn = item.querySelector(".read-more");
+  const readLessBtn = item.querySelector(".read-less");
+
+  readMoreBtn.addEventListener("click", function () {
+    item.classList.add("expanded");
+  });
+
+  readLessBtn.addEventListener("click", function () {
+    item.classList.remove("expanded");
+  });
+});
