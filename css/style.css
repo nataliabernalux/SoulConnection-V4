@@ -46,7 +46,7 @@ img {
 
 h2 {
   font-family: "Roboto Flex", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 2.5rem;
   padding: 0;
   letter-spacing: -0.01em;
@@ -144,6 +144,7 @@ h5 {
 .logo-container {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .nav-logo {
@@ -317,7 +318,7 @@ header {
   margin: 0 auto;
   height: 100vh;
   padding: 60px 0 70px 0;
-  background-image: url("img/hero-img.jpg");
+  background-image: url("../img/hero-img.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -464,6 +465,18 @@ a#scroll-btn::before {
   display: flex;
 }
 
+.mandala-50 {
+  opacity: 50%;
+  width: 18em;
+  margin-top: 2em;
+}
+
+.mandala-50-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .astrology h2 {
   padding: 0 0 0.3em 0;
 }
@@ -483,7 +496,7 @@ a#scroll-btn::before {
   text-align: center;
 
   position: relative;
-  background-image: url("img/moon-mandala2.png");
+  background-image: url("../img/moon-mandala2.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -600,11 +613,69 @@ a#scroll-btn::before {
   position: relative; /* Ensures items layer above other elements */
 }
 
+.testimonials-item {
+  text-align: left;
+  overflow: hidden;
+  position: relative;
+  height: 350px; /* Or whatever height fits your design */
+  transition: height 0.3s ease;
+}
+
+.testimonials-item.expanded {
+  height: auto; /* When expanded, show the whole content */
+}
+
+.testimonials-item .read-more {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #7f1212;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.testimonials-item.expanded .read-more {
+  display: none; /* Hide "Ver más" when expanded */
+}
+
+.read-less {
+  display: none;
+  position: absolute;
+  color: #7f1212;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: opacity 0.3s ease;
+}
+
+.testimonials-item.expanded .read-less {
+  display: inline-block; /* Show when expanded */
+}
+
+.testimonials-item.expanded .read-more {
+  display: none; /* Hide 'Ver más' when expanded */
+}
+
 /* Testimonial text */
 .testimonials-item p {
   font-size: 16px;
   line-height: 1.5;
   color: #4a4a4a; /* Softer black for a modern feel */
+
+  overflow: hidden;
+  max-height: 190px; /* Limit paragraph height */
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  transition: max-height 0.3s ease;
+}
+
+.testimonials-item.expanded p {
+  max-height: 1000px; /* A high value to show all the text */
 }
 
 /* Rating stars */
@@ -612,6 +683,37 @@ a#scroll-btn::before {
   margin-top: 15px;
   font-size: 14px;
   color: #851630;
+}
+
+.testimonials-profile {
+  display: flex;
+  align-items: center; /* Vertical alignment */
+  gap: 8px; /* Space between items */
+}
+
+.profile-img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  overflow: hidden; /* In case the image exceeds the round shape */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-name h5 {
+  padding: 0;
+}
+
+.google-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 3em;
+}
+
+.hide-readmore .read-more,
+.hide-readmore .read-less {
+  display: none !important;
 }
 
 .swiper-scrollbar {
@@ -684,7 +786,7 @@ a#scroll-btn::before {
 .crystals {
   position: relative;
   z-index: 1; /* Keep crystals below hero section */
-  background-image: url("img/shadow.png");
+  background-image: url("../img/shadow.png");
   background-size: 100% auto; /* Set width to 100% and keep aspect ratio */
   background-repeat: no-repeat; /* Prevent repeating */
   padding-top: 0.8em;
@@ -697,7 +799,7 @@ a#scroll-btn::before {
   margin: 0 auto;
   height: 65vh;
   padding: 60px 0 70px 0;
-  background-image: url("img/crystals.png");
+  background-image: url("../img/crystals.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -721,7 +823,7 @@ a#scroll-btn::before {
 /*Footer style*/
 .footer {
   background: linear-gradient(to bottom, rgba(116, 38, 44, 0.5), #480208),
-    url("img/shadow.png") top center no-repeat;
+    url("../img/shadow.png") top center no-repeat;
   background-size: cover; /* Ensures the image covers the width */
   color: #f9dba6;
   position: relative;
@@ -734,7 +836,12 @@ a#scroll-btn::before {
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 2em;
   height: 100%; /* Set height to 100% for responsiveness */
+}
+
+iframe {
+  border-radius: 1em;
 }
 
 .footer-left-section,
@@ -790,6 +897,10 @@ a#scroll-btn::before {
 
 .myname p {
   padding: 0;
+}
+
+.social-media a {
+  text-decoration: none;
 }
 
 .social-media {
@@ -880,6 +991,12 @@ a#scroll-btn::before {
   }
 }
 
+@media (max-width: 1115px) {
+  .mandala-50 {
+    display: none;
+  }
+}
+
 @media (max-width: 1100px) {
   .testimonials-wrapper {
     display: flex;
@@ -916,7 +1033,7 @@ a#scroll-btn::before {
 
 /*nav media*/
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1007px) {
   .nav {
     transition: max-height 7.9s ease; /* Aquí ajustas la duración (0.5s en este ejemplo) y el tipo de animación (ease) */
 
@@ -926,6 +1043,10 @@ a#scroll-btn::before {
 
   .nav--visible {
     display: block; /* Show the navigation menu when the "nav--visible" class is added */
+  }
+
+  .nav-toggle {
+    display: block; /* Muestra el botón de hamburguesa */
   }
 
   .soulconnection-logo {
@@ -1026,13 +1147,13 @@ a#scroll-btn::before {
   }
 }
 
-@media screen and (min-width: 901px) {
+@media screen and (min-width: 1008px) {
   .hamburger {
     display: none;
   }
 
   .nav-toggle {
-    display: none;
+    display: none; /* Oculta el botón en pantallas grandes */
   }
 }
 
