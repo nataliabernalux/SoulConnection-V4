@@ -617,7 +617,7 @@ a#scroll-btn::before {
   text-align: left;
   overflow: hidden;
   position: relative;
-  height: 270px; /* Or whatever height fits your design */
+  height: 350px; /* Or whatever height fits your design */
   transition: height 0.3s ease;
 }
 
@@ -668,7 +668,7 @@ a#scroll-btn::before {
   color: #4a4a4a; /* Softer black for a modern feel */
 
   overflow: hidden;
-  max-height: 100px; /* Limit paragraph height */
+  max-height: 190px; /* Limit paragraph height */
   margin-bottom: 10px;
   padding-bottom: 10px;
   transition: max-height 0.3s ease;
@@ -711,8 +711,8 @@ a#scroll-btn::before {
   margin-left: 3em;
 }
 
-.hernan-review .read-more,
-.hernan-review .read-less {
+.hide-readmore .read-more,
+.hide-readmore .read-less {
   display: none !important;
 }
 
