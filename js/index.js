@@ -115,6 +115,16 @@ document.querySelectorAll(".testimonials-item").forEach(function (item) {
   const readLessBtn = item.querySelector(".read-less");
 
   readMoreBtn.addEventListener("click", function () {
+    // Cerrar todas las reseñas antes de abrir la nueva
+    document
+      .querySelectorAll(".testimonials-item")
+      .forEach(function (otherItem) {
+        if (otherItem !== item) {
+          otherItem.classList.remove("expanded");
+        }
+      });
+
+    // Abrir la reseña seleccionada
     item.classList.add("expanded");
   });
 
