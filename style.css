@@ -711,6 +711,11 @@ a#scroll-btn::before {
   margin-left: 3em;
 }
 
+.hernan-review .read-more,
+.hernan-review .read-less {
+  display: none !important;
+}
+
 .swiper-scrollbar {
   background-color: #f9f9f9; /* White background for the scrollbar track */
   margin-top: 2em;
