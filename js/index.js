@@ -49,15 +49,17 @@ document.addEventListener("DOMContentLoaded", function () {
 //Crystal parallax scrolling effect
 
 document.addEventListener("DOMContentLoaded", function () {
-  var CrystalsImg = document.querySelector(".crystals-img");
+  var crystalsImg = document.querySelector(".crystals-img");
+  var crystals3Img = document.querySelector(".crystals3-img"); // Mobile version
+
   var crystalsOverlay = document.querySelector(".crystals-overlay");
 
-  // Function to update parallax and darkening effects
   function updateEffects() {
     var scrollPos = window.scrollY;
 
     // Parallax effect
-    heroImg.style.transform = "translateY(" + scrollPos * 0.4 + "px)";
+    crystalsImg.style.transform = "translateY(" + scrollPos * 0.4 + "px)";
+    crystals3Img.style.transform = "translateY(" + scrollPos * 0.4 + "px)"; // Less movement for mobile
   }
 });
 
