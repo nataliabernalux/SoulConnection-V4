@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container2 {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.shadow-background {
+  background-image: url(../img/shadow8.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding-top: 10em;
+  padding-bottom: 3em;
+}
+
+.giftcard-img {
+  max-width: 100%;
+  border-radius: 20px;
+  border: 1.8px solid #e8a2b3;
+}
+
+.giftcard-text {
+  background: rgba(242, 241, 240, 1);
+  background: linear-gradient(0deg, #ebe0d5 0%, rgba(242, 241, 240, 1) 100%);
+  padding: 1em 1em 1.5em 1em;
+  border-radius: 20px;
+  border: 1.8px solid #e8a2b3;
+  text-align: center;
+}
+
+.row2 {
+  display: flex;
+  align-items: center;
+}
+
+.col2 {
+  width: 100%;
+}
+
+.col2 + .col2 {
+  margin-left: 4em;
+}
+
+@media (max-width: 900px) {
+  .row2 {
+    display: block;
+  }
+
+  .col2 + .col2 {
+    margin-left: 0;
+  }
+
+  .container2 {
+    width: 70%;
+  }
+
+  .shadow-background {
+    padding-top: 7em;
+  }
+
+  .giftcard-text {
+    margin-top: 1.5em;
+  }
+}
+
+@media (max-width: 470px) {
+  .container2 {
+    width: 80%;
+  }
+
+  .shadow-background {
+    padding-top: 7em;
+  }
+
+  .giftcard-text {
+    margin-top: 1.5em;
+  }
+}
