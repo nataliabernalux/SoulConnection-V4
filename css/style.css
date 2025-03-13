@@ -1245,8 +1245,14 @@ iframe {
     transform: translateY(0); /* Cards come from the top */
   }
 
+  .crystals {
+    background-size: 150% auto; /* Scale up slightly to cover more area */
+    background-position: center top; /* Position it at the top */
+  }
+
   .crystals-img {
-    height: 45vh; /* Reduces height of the crystals image for smaller screens */
+    height: 45vh;
+    background-position: top center; /* Move the image so the crystals are less centered */
   }
 }
 
