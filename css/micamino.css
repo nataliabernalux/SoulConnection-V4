@@ -1,0 +1,142 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.header-shadow {
+  width: 100%;
+  height: 5.8em;
+  background-repeat: no-repeat;
+}
+
+.mi-camino {
+  padding-bottom: 2em;
+}
+
+.rounded-img-right {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-bottom-right-radius: 100px;
+}
+
+.rounded-img-left {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-bottom-left-radius: 100px;
+}
+
+.ecuador2021-img {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-bottom-right-radius: 100px;
+  object-position: 10% center;
+}
+
+.bsas2022-img {
+  width: 100%;
+  height: 20em;
+  object-fit: cover;
+  border-bottom-left-radius: 100px;
+  object-position: center 25%;
+}
+
+.columna {
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 4em;
+}
+
+.columna + .columna {
+  margin-left: 3em;
+}
+.fila {
+  display: flex;
+  justify-content: space-between;
+}
+
+.text-container {
+  padding-bottom: 3em;
+}
+
+.mis-comienzos p {
+  padding-bottom: 1.5em;
+}
+
+.bottom-space {
+  padding-bottom: 1em;
+}
+
+.align-center {
+  align-items: center;
+}
+
+/* Media query for phone-sized screens */
+@media screen and (max-width: 850px) {
+  .container {
+    max-width: 100vw; /* Allow full width */
+    padding: 0; /* Remove padding to avoid spacing */
+  }
+
+  .fila {
+    flex-direction: column;
+  }
+
+  .columna {
+    margin-left: 0; /* Remove margin between columns */
+    padding-bottom: 0.5em; /* Add padding to the bottom of columns */
+  }
+
+  .columna + .columna {
+    margin-left: 0;
+  }
+
+  .text-container {
+    width: 90%;
+    margin: 0 auto; /* Centers the text */
+    padding-bottom: 0em;
+    padding-top: 1.5em;
+  }
+
+  /* Default: Text first, Image second */
+  .columna:first-child {
+    order: 1;
+  }
+  .columna:last-child {
+    order: 2;
+  }
+
+  /* Fix for sections where the image appears first in HTML */
+  .fila:nth-child(even) .columna:first-child {
+    order: 2;
+  }
+  .fila:nth-child(even) .columna:last-child {
+    order: 1;
+  }
+
+  /* Full-width images forced outside the container */
+  .columna img {
+    width: 100vw; /* Take full viewport width */
+    max-width: none; /* Ignore container restrictions */
+    height: auto;
+    display: block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); /* Center the image */
+  }
+
+  .rounded-img-right {
+    border-bottom-right-radius: 120px;
+  }
+
+  .rounded-img-left {
+    border-bottom-left-radius: 120px;
+  }
+
+  .header-shadow {
+    height: 4.4em;
+  }
+}
