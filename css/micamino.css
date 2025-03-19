@@ -10,8 +10,24 @@
   background-repeat: no-repeat;
 }
 
+.shadow-background {
+  background-image: url(../img/shadow2.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  padding-top: 10em;
+  padding-bottom: 3em;
+}
+
 .mi-camino {
+}
+
+.mi-camino .beige-background {
+  padding-top: 2em;
   padding-bottom: 2em;
+}
+
+.mi-camino h2 {
+  margin-top: 0;
 }
 
 .rounded-img-right {
@@ -33,7 +49,7 @@
   height: 20em;
   object-fit: cover;
   border-bottom-right-radius: 100px;
-  object-position: 10% center;
+  object-position: 5% center;
 }
 
 .bsas2022-img {
@@ -70,10 +86,6 @@
   padding-bottom: 1em;
 }
 
-.align-center {
-  align-items: center;
-}
-
 /* Media query for phone-sized screens */
 @media screen and (max-width: 850px) {
   .container {
@@ -98,7 +110,7 @@
     width: 90%;
     margin: 0 auto; /* Centers the text */
     padding-bottom: 0em;
-    padding-top: 1.5em;
+    padding-top: 2.5em;
   }
 
   /* Default: Text first, Image second */
@@ -138,5 +150,9 @@
 
   .header-shadow {
     height: 4.4em;
+  }
+
+  .mi-camino .beige-background {
+    padding-top: 0.5em;
   }
 }
