@@ -786,7 +786,7 @@ a#scroll-btn::before {
 .crystals {
   position: relative;
   z-index: 1; /* Keep crystals below hero section */
-  background-image: url("../img/shadow.png");
+  background-image: url("../img/shadow2.png");
   background-size: 100% auto; /* Set width to 100% and keep aspect ratio */
   background-repeat: no-repeat; /* Prevent repeating */
   padding-top: 0.8em;
