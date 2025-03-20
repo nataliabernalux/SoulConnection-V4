@@ -78,6 +78,12 @@
   padding-bottom: 1em;
 }
 
+@media screen and (max-width: 1007px) {
+  .header-shadow {
+    height: 4.4em;
+  }
+}
+
 /* Media query for phone-sized screens */
 @media screen and (max-width: 850px) {
   .container {
@@ -138,10 +144,6 @@
 
   .rounded-img-left {
     border-bottom-left-radius: 120px;
-  }
-
-  .header-shadow {
-    height: 4.4em;
   }
 
   .mi-camino .beige-background {

@@ -1147,7 +1147,7 @@ iframe {
   }
 }
 
-@media screen and (min-width: 1008px) {
+@media screen and (min-width: 1007px) {
   .hamburger {
     display: none;
   }
